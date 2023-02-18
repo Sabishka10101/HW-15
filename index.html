@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Sicilian Oranges</title>
+  </head>
+  <body>
+    <h1>Sicilian Oranges</h1>
+    <div class="main">
+    <div class="product">
+      <img
+        src="./img/Sicilian_Oranges.jpg"
+        alt="Sicilian Oranges"
+      />
+      <button class="btn__buy" type="button">ORDER</button>
+    </div>
+    <form class="buy__form"  method="get">
+      <input id="user__name" type="text" class="required-field" placeholder="Прізвище, Ім'я, Побатькові" />
+      <label> E-mail:
+        <input type="email" class="email">
+      </label>
+      <label> Mobile Phone:
+        <input type="tel" class="tel" value="+380">
+      </label>
+      <div class="form-input-error" data-for="email">Verify the correctness of data entry</div>
+      <label for="towns">City
+        <select  id="towns" >
+          <option value="Київ">Kyiv</option>
+          <option value="Харків">Odesa</option>
+          <option value="Львів">Mykilaiv</option>
+          <option value="Дніпропетровськ">Lviv</option>
+        </select>
+      </label>
+      <label for="post__office" >Nova Poshta №
+        <input id="post__office" type="number" class="post-dest-feeld" ></input>
+        <div class="form-input-error" data-for="email">Enter the data</div>
+      </label>
+      <select name="" id="pay">
+        <option value="банківською карткою">Bank card</option>
+        <option value="кур'єру карткою">Cash</option>
+        <option value="кур'єру готівкою">PayPal</option>
+        <option value="у відділенні Нової Пошти">Courier payment</option>
+      </select>
+      <div class="input-group quantity_goods">
+        <span>Count items</span>
+          <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" value="1" title="Qty">
+          <input type="button" value="-" id="button_minus">
+          <input type="button" value="+" id="button_plus">
+      
+      </div>
+      <label>Additional Information for order
+        <input class="final__text" type="text">
+      </label>
+      <button type="submit" id="submit-btn">Send</button>
+    </form>
+  </div>
+  
+  <script src="./scrypt.js"></script>
+  <script src="./valid.js"></script>
+    
+  </body>
+</html>
