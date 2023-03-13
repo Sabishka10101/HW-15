@@ -8,11 +8,14 @@ const minusBtn = document.getElementById("button_minus");
 const submitBtn = document.querySelector("#submit-btn");
 const userName = document.querySelector(".user__name");
 
-buyBtn.addEventListener("submit", (event) => {
-  event.preventDefault();
-  form.style.display = "flex";
-});
-
+buyBtn.addEventListener(
+  "submit",
+  (event) => {
+    event.preventDefault();
+  },
+  false
+);
+buyBtn.addEventListener("click", () => (form.style.display = "flex"));
 plusBtn.onclick = function () {
   let qty = parseInt(numCount.value);
   qty = qty + 1;

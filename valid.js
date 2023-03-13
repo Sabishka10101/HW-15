@@ -13,36 +13,36 @@ const regExpEmail =
 const regExpTel = /^([+380]{4}[0-9]{9})?$/g;
 
 submitBtn.addEventListener("click", (event) => {
-  if (reqField.value == 0 || !regExp.test(reqField.value)) {
-    console.log("ФИО:" + regExp.test(reqField.value));
-    event.preventDefault();
-    reqField.style.border = "2px solid red";
-    formError.style.display = "block";
-    return null;
-  }
-  if (email.value == 0 || !regExpEmail.test(email.value)) {
-    console.log("email:" + regExp.test(email.value));
-    event.preventDefault();
-    email.style.border = "2px solid red";
-    formError.style.display = "block";
-    return null;
-  }
-  if (!regExpTel.test(tel.value)) {
-    console.log("tel:" + regExp.test(tel.value));
-    event.preventDefault();
-    tel.style.border = "2px solid red";
-    formError.style.display = "block";
-    return null;
-  }
-  if (postField.value == 0) {
-    event.preventDefault();
-    postField.style.border = "2px solid red";
-    formError.style.display = "block";
-    return null;
-  } else {
-    formVal(event);
-  }
-});
+    if (reqField.value == 0 || !regExp.test(reqField.value)) {
+      console.log(regExp.test(reqField.value));
+      event.preventDefault();
+      reqField.style.border = "2px solid red";
+      formError.style.display = "block";
+      return false;
+    }
+  
+    if (email.value == 0 || !regExpEmail.test(email.value)) {
+      console.log(regExp.test(email.value));
+      event.preventDefault();
+      email.style.border = "2px solid red";
+      formError.style.display = "block";
+    }
+  
+    if (!regExpTel.test(tel.value)) {
+      event.preventDefault();
+      tel.style.border = "2px solid red";
+      formError.style.display = "block";
+    }
+  
+    if (postField.value == 0) {
+      event.preventDefault();
+      postField.style.border = "2px solid red";
+      formError.style.display = "block";
+
+    } else {
+      formVal(event);
+    }
+  });
 
 function formVal(event) {
   event.preventDefault();
@@ -56,7 +56,7 @@ function formVal(event) {
   div.classList.add("form-value");
   let p = document.createElement("p");
   div.appendChild(p);
-  p.innerHTML = "ПІП:" + " " + reqField.value;
+  p.innerHTML = "ПІБ:" + " " + reqField.value;
   let valEmail = document.createElement("p");
   div.appendChild(valEmail);
   valEmail.innerHTML = "Email :" + " " + email.value;
@@ -68,16 +68,16 @@ function formVal(event) {
   town.innerHTML = "Місто:" + " " + towns.value;
   let post = document.createElement("p");
   div.appendChild(post);
-  post.innerHTML = "Склад Нової Пошти №:" + " " + postField.value;
+  post.innerHTML = "Склад УкрПошти №:" + " " + postField.value;
   let pay = document.createElement("p");
   div.appendChild(pay);
   pay.innerHTML = "Оплата:" + " " + payField.value;
   let amount = document.createElement("p");
   div.appendChild(amount);
-  amount.innerHTML = "Кількість товару:" + " " + numCount.value;
+  amount.innerHTML = "Кількість найменування товару:" + " " + numCount.value;
   let valText = document.createElement("p");
   div.appendChild(valText);
-  valText.innerHTML = "Коментар до замовленя :" + " " + text.value;
+  valText.innerHTML = "Додаткова інофрмація до замовленя :" + " " + text.value;
 
-  // document.querySelector("form").submit();
+  document.querySelector("form").submit();
 }
